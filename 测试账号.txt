@@ -1,0 +1,19 @@
+网址	商家号	用户名	密码		
+开发环境	332	admin	123456		
+					admin321 123456
+					
+					
+					
+	1111126000	admin049	x12345678		
+					
+					
+					
+					
+					
+		b8888bo@gmail.com	aaaa1111		
+					
+ab1324ab@outlook.com	1118014777	hwk		商家	智付
+hwk@ddbill.com	1118012800	ab1324ab	ab895623220	商家	
+435821607@qq.com	1118012775	ab1324ab	ab895623220	商家	
+435821607@qq.com	20015002	admin963	119047a	代理商	
+ab1324ab@outlook.com	200000326	admin990		商家	
