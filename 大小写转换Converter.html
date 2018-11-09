@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<link rel="shortcut icon" href="https://s.ssl.qhres.com/static/52166db8c450f68d.ico" type="image/x-icon">
+</head>
+<style>
+ .zm{
+    clear: both;
+    color: #525252;
+    padding: 5px;
+    border: 1px solid #d9d9d9;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    line-height: 20px;
+}
+.zm_top{
+    clear: both;
+    color: #525252;
+    border: 1px solid #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 0;
+    padding-left: 5px;
+}
+.huisefengexian {
+    color: #666;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #d9d9d9;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+    text-align: center;
+	font-size:10px;
+}
+.nry_bt .nry_bt_text {
+    margin-left: 10px;
+    font-family: "\u9ed1\u4f53";
+    color: #333;
+    font-size: 44px;
+    height: 54px;
+    line-height: 54px;
+    display: inline-block;
+    overflow: hidden;
+}
+.nry_bt img {
+    height: 54px;
+    width: 54px;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 3px #000;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+img {
+    border: 0;
+}
+.nry_bt {
+    clear: both;
+    height: 54px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+</style>
+<body style="background-image: url(http://f.51240.com/img/bg.gif?v=16091301);margin:0;background-position:0 0px;background-repeat:repeat-x">
+    <div style="width: 616px;height: 303px; border: 1px solid darkkhaki;margin-top: 10%;margin-left: 25%">
+	<div class="nry_bt">
+<img src="https://p.ssl.qhimg.com/dmsmty/74_74_100/t01d6e13e94f5d37321.webp" alt="大小写转换" />
+<div class="nry_bt_text">大小写转换</div>
+</div>
+
+
+<div class="huisefengexian">（提示：请把你需要转换的内容粘贴在这里！）</div> 
+        <div>
+            <textarea name="content" id="zm_neirong" style="border: 1px solid #888888;padding: 3px;height: 160px;width: 98.7%;font-size: 30px"></textarea>
+        </div>
+        <div>
+		    <input style="width: 200px;height: 40px" type="button" onclick="zm_quanbudaxie()" value="全大写">
+            <input style="width: 200px;height: 40px" type="button" onclick="zm_shouzimudaxie()" value="首字母大写">
+            <input style="width: 200px;height: 40px" type="button" onclick="zm_quanbuxiaoxie()" value="全小写">
+        </div>
+		<div>
+		   <div class="zm_top">关于英文字母</div>
+		   <div class="zm">
+		   &nbsp;&nbsp;英文字母，即英文（English）所基于的字母，共26个。<br /><br />
+		   &nbsp;&nbsp;英文字母渊源于拉丁字母，拉丁字母渊源于希腊字母，而希腊字母则是由腓尼基字母演变而来的。<br /><br />
+&nbsp;&nbsp;大约公元前13世纪，腓尼基人创造了人类历史上第一批字母文字，共22个字母（无元音）。这是腓尼基人对人类文化的伟大贡献。腓尼基字母是世界字母文字的开端。在西方，它派生出古希腊字母，后者又发展为拉丁字母和斯拉夫字母。而希腊字母和拉丁字母是所有西方国家字母的基础。在东方，它派生出阿拉美亚字母，由此又演化出印度、阿拉伯、希伯莱、波斯等民族字母。中国的维吾尔、蒙古、满文字母也是由此演化而来。<div>
+		</div>
+    </div>
+</body>
+<script type="text/javascript">
+	function zm_shouzimudaxie() {
+    zm_tihuanneirong(document.getElementById("zm_neirong").value.replace(/\b\w+\b/g, function (a) {
+        return a.substring(0, 1).toUpperCase() + a.substring(1)
+    }))
+	}
+	function zm_quanbudaxie() {
+		zm_tihuanneirong(document.getElementById("zm_neirong").value.toUpperCase())
+	}
+	function zm_quanbuxiaoxie() {
+		zm_tihuanneirong(document.getElementById("zm_neirong").value.toLowerCase())
+	}
+	function zm_tihuanneirong(a) {
+		//if (location.hostname.indexOf("0.") > 2) {
+			document.getElementById("zm_neirong").value = a
+		//}
+	};
+</script>
+</html>
