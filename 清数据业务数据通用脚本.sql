@@ -1,0 +1,292 @@
+--清除业务表的数据
+truncate table SYSDB.T_WITHHOLD_TYPE;
+truncate table SYSDB.T_WINNING_RATE;
+truncate table SYSDB.T_SYS_TEMPBIZ_SESSION;
+truncate table SYSDB.T_SYS_ROLE_MENUITEM_BAK;
+truncate table SYSDB.T_SYS_ROLE_MENUITEM_0114;
+truncate table SYSDB.T_SYS_MENU_BAK;
+truncate table SYSDB.T_SYS_MENU_0114;
+truncate table SYSDB.T_SYS_MENUITEM_BAK;
+truncate table SYSDB.T_SYS_MENUITEM_0114;
+truncate table SYSDB.T_SYS_LINK_TEMPLATE;
+truncate table SYSDB.T_SYS_INVITATION_TEMPLATE;
+truncate table SYSDB.T_SYS_EMAIL_TEMPLATE_602;
+truncate table SYSDB.T_SUBBRANCH_TEMP;
+truncate table SYSDB.T_SECURITY_EVENT_TYPE;
+truncate table SYSDB.T_RECCHANNEL_CLIENT_VERSION;
+truncate table SYSDB.T_POS_SPEC;
+truncate table SYSDB.T_POS_EXCHANGE_RATE;
+truncate table SYSDB.T_MERCHANT_CLIENT_VERSION;
+truncate table SYSDB.T_MERCHANT_API;
+truncate table SYSDB.T_EXCHANGE_RATE;
+truncate table SYSDB.T_COUNTY;
+truncate table SYSDB.T_CLIENT_VERSION_0710;
+truncate table SYSDB.T_CLIENT_VERSION;
+truncate table SYSDB.T_CHARGE_CONFIG;
+truncate table MEMBER.T_WITHHOLD_SIGNED;
+truncate table MEMBER.T_WITHHOLD_RECORD;
+truncate table MEMBER.T_WEIXIN_RECEIVE_MONEY_INFO;
+truncate table MEMBER.T_USER_DEVICE;
+truncate table MEMBER.T_TRANSFER_TEMP;
+truncate table MEMBER.T_TRANSFER_INTERCONNECTED;
+truncate table MEMBER.T_TRANSFER_525;
+truncate table MEMBER.T_SIGN_EXPRESS_RELATION;
+truncate table MEMBER.T_SIGN_EXPRESS_BAK;
+truncate table MEMBER.T_SIGN_EXPRESS;
+truncate table MEMBER.T_SHARE_RECORDS;
+truncate table MEMBER.T_RECIEVE_PAY_TRADE_TEMP;
+truncate table MEMBER.T_RECIEVE_PAY_TRADE;
+truncate table MEMBER.T_RECHARGE_RECORD;
+truncate table MEMBER.T_RECCHANNEL_CLIENT_CONFIG;
+truncate table MEMBER.T_QR_CODE_PAY_STATISTIC;
+truncate table MEMBER.T_PROXY_MENUITEM;
+truncate table MEMBER.T_POS_INFO;
+truncate table MEMBER.T_POS_GESTURE;
+truncate table MEMBER.T_PFTP_WITHDRAW_CONFIG;
+truncate table MEMBER.T_PAY_STAT;
+truncate table MEMBER.T_PAY_ACCOUNT_STAT_TEMP;
+truncate table MEMBER.T_PAY_ACCOUNT_STAT;
+truncate table MEMBER.T_PAYMENT_CODE_PAY_REQUEST;
+truncate table MEMBER.T_MOBILE_CHECK_INFO;
+truncate table MEMBER.T_MER_VALIDATION_LINE;
+truncate table MEMBER.T_MER_IDENTITY_LINE;
+truncate table MEMBER.T_MERCHANT_WITHHOLD;
+truncate table MEMBER.T_MERCHANT_TRANSFER_CONFIG;
+truncate table MEMBER.T_MERCHANT_SIGN_EXPRESS;
+truncate table MEMBER.T_MERCHANT_SETTLEACCT;
+truncate table MEMBER.T_MERCHANT_PUSH_RULE;
+truncate table MEMBER.T_MERCHANT_PAYCHANNEL_CONFIG;
+truncate table MEMBER.T_MERCHANT_ONEINPIECE;
+truncate table MEMBER.T_MERCHANT_MENUITEM;
+truncate table MEMBER.T_MERCHANT_DCARD_SETTLE_RATE;
+truncate table MEMBER.T_MERCHANT_CHARGE_CONFIG;
+truncate table MEMBER.T_MERCHANT_CHANGED_LINE;
+truncate table MEMBER.T_MERCHANT_CERT_CONFIG;
+truncate table MEMBER.T_MERCHANT_ATT_20150707;
+truncate table MEMBER.T_MERCHANT_APP_STATUS;
+truncate table MEMBER.T_MERCHANT_APPLICATION;
+truncate table MEMBER.T_MERCHANT_APICONFIG;
+truncate table MEMBER.T_MEMBER_WITHHOLD;
+truncate table MEMBER.T_MEMBER_TRADE_TEMP;
+truncate table MEMBER.T_MEMBER_TRADE;
+truncate table MEMBER.T_MEMBER_SIGN_EXPRESS;
+truncate table MEMBER.T_MEMBER_SETTLECONFIG_TEMP;
+truncate table MEMBER.T_MEMBER_PICTURE_MANAGE;
+truncate table MEMBER.T_MEMBER_INFO_MANAGE;
+truncate table MEMBER.T_MEMBER_GATEWAY_LOGIN;
+truncate table MEMBER.T_MEMBER_EXT;
+truncate table MEMBER.T_MEMBER_CONTROL;
+truncate table MEMBER.T_MEMBER_CONTRACT;
+truncate table MEMBER.T_MEMBER_CERT_TYPE;
+truncate table MEMBER.T_MEMBER_CERT_RECORD;
+truncate table MEMBER.T_MEMBER_CERT_MOBILE;
+truncate table MEMBER.T_MEMBER_CERT_CHANNEL;
+truncate table MEMBER.T_MEMBER_CERT_BANKCARD;
+truncate table MEMBER.T_MEMBER_CERT_ACAD;
+truncate table MEMBER.T_MEMBER_CANCEL;
+truncate table MEMBER.T_MEMBER_BANK_CARD_CONTRACT;
+truncate table MEMBER.T_MEMBER_BANK_CARD_BIND_BAK;
+truncate table MEMBER.T_MEMBER_BANK_CARD_BIND;
+truncate table MEMBER.T_MEMBER_BANKACCOUNT;
+truncate table MEMBER.T_MEMBER_APPLICATION;
+truncate table MEMBER.T_MEMBER;
+truncate table MEMBER.T_LOGIN_LOG;
+truncate table MEMBER.T_INVITATION_RECORDS;
+truncate table MEMBER.T_IDENTITY_INFO;
+truncate table MEMBER.T_EDUCATION_CHECK_INFO;
+truncate table MEMBER.T_DELIVERY_ADDRESS;
+truncate table MEMBER.T_DCARD_SETTLE_RATE;
+truncate table MEMBER.T_CUSTOMER_ADVICE;
+truncate table MEMBER.T_CONTRACT;
+truncate table MEMBER.T_BUSINESS_PAY_TYPE;
+truncate table MEMBER.T_BIZ_NOTICE;
+truncate table MEMBER.T_BINDING_MOBILE_INFO;
+truncate table MEMBER.T_AUTHCODE_LOGIN;
+truncate table MEMBER.T_ARTIFIC_REALNAME_AUTH_INFO;
+truncate table MEMBER.T_APPEAL_SERVICE;
+truncate table MEMBER.T_ACCOUNT_VERIFY_BAK;
+truncate table MEMBER.T_ACCOUNT_VERIFY;
+truncate table MEMBER.T_ACCOUNT_TEMP;
+truncate table MEMBER.T_ACCOUNT_MER_ACCT_CONNECT;
+truncate table MEMBER.TF_PRODUCT;
+truncate table MEMBER.FD_PROXY_DEFRAY;
+truncate table MEMBER.FD_MERCHANT_DEFRAY;
+truncate table ORDERS.T_TRANSFER_EXCHANGE;
+truncate table ORDERS.T_SEQUENCE;
+truncate table ORDERS.T_RED_PACKET_INFO_NEW;
+truncate table ORDERS.T_RED_PACKET_INFO;
+truncate table ORDERS.T_RED_PACKET_EXT_INFO;
+truncate table ORDERS.T_REC_RED_PACKET_NEW;
+truncate table ORDERS.T_REC_RED_PACKET;
+truncate table ORDERS.T_PRIZE_NUMBER;
+truncate table ORDERS.T_PRIZE;
+truncate table ORDERS.T_ORDER_TRANSFER;
+truncate table ORDERS.T_ORDER_SPLIT_RECORD;
+truncate table ORDERS.T_ORDER_EXCHANGE_BAK;
+truncate table ORDERS.T_ORDER_EXCHANGE;
+truncate table ORDERS.T_ORDER_DCARD;
+truncate table ORDERS.T_ORDER_BANKBACKINFO;
+truncate table ORDERS.T_ORDER_BAK;
+truncate table ORDERS.T_EXCHANGE_BAK;
+truncate table ORDERS.T_EXCHANGE;
+truncate table ORDERS.T_DRAW_RECORD;
+truncate table ORDERS.T_DCARD_BALANCE_MSG;
+truncate table ORDERS.T_CUSTOM_DECLARATION;
+truncate table ORDERS.T_COUPON_TRADE;
+truncate table ORDERS.T_COUPON_BATCH_INFO;
+truncate table ORDERS.T_CHARGE_ORDER;
+truncate table ORDERS.T_CASH_COUPON;
+truncate table ORDERS.T_CARD;
+truncate table ORDERS.T_BATCH_CROSS_PAY;
+truncate table ORDERS.T_BATCH_CROSS_ORDER;
+truncate table ORDERS.TMP_HIST_ACTIVE_SESS_HIS0625;
+truncate table ORDERS.TF_TRADE;
+truncate table ORDERS.TABPARTCNT_201605;
+truncate table ORDERS.SYS_EXPORT_SCHEMA_01;
+truncate table ORDERS.STAT_TABLE;
+truncate table ORDERS.RECORD_TABPART;
+truncate table ORDERS.T_TRADE_DAY_STAT
+truncate table ACCOUNT.T_MERCHANT_USER;
+truncate table ACCOUNT.T_ACCOUNT_OPERATE_LINE;
+truncate table ACCOUNT.TF_ACCOUNT_LINE;
+truncate table ACCOUNT.TF_ACCOUNT;
+truncate table RISK.T_RC_PAYCLASS_AREA_BLACK;
+truncate table RISK.T_RC_MOBILE_BLACK;
+truncate table RISK.T_RC_MERCHANT_RULE;
+truncate table RISK.T_RC_MERCHANT_AREA_BLACK;
+truncate table RISK.T_RC_IP;
+truncate table RISK.T_RC_EVENT;
+truncate table RISK.T_RC_DOMAIN_BLACK;
+truncate table RISK.T_RC_CARDBIN;
+truncate table RISK.T_RC_BLANK_LIST;
+truncate table RISK.T_RC_BLACK_LIST;
+truncate table RISK.T_ORDER_CYBERSOURCE;
+truncate table RISK.T_IP_DAY_STAT;
+truncate table RISK.T_CARD_DAY_STAT;
+truncate table ORDERS.TABPARTCNT;
+truncate table ORDERS.T_POS_DAY_SUMMARY;
+truncate table ORDERS.T_POS_ORDER;
+truncate table MEMBER.T_PROXYINDIVI_DCARD_RATE;
+truncate table MEMBER.T_POSTING_RECORD;
+truncate table MEMBER.T_PLATFORM_MERCHANT_RELA;
+truncate table MEMBER.T_BANK_MERCHANT;
+truncate table ORDERS.T_ORDER_LINE;
+truncate table MEMBER.T_MERCHANT_PAYCLASS_CONFIG;
+truncate table MEMBER.T_PROXY_USER_MENU;
+truncate table MEMBER.T_MERCHANT_CONTACT_INFO;
+truncate table MEMBER.T_PROXY_CONTACT_INFO;
+truncate table MEMBER.T_PROXY_ATTACHEDINFO;
+truncate table ORDERS.T_ORDER_ABNORMAL;
+truncate table ORDERS.T_ORDER_REFUND;
+truncate table MEMBER.T_MERCHANT_CONTRACT_INFO;
+truncate table ORDERS.T_ORDER_OPERATE_LINE;
+truncate table SYSDB.T_TASK;
+truncate table RISK.T_MERCHANT_DAY_STAT;
+truncate table RISK.T_MERCHANT_MONTH_STAT;
+truncate table SYSDB.T_SYS_NOTICE;
+truncate table MEMBER.T_LOGIN_LOG_STAT;
+truncate table MEMBER.T_PROXY_USER;
+truncate table ORDERS.T_ORDER_DEPOSIT;
+truncate table MEMBER.T_PROXY;
+truncate table SYSDB.T_SYS_NOTICE_RECIPIENTS;
+truncate table MEMBER.T_MERCHANT;
+truncate table ACCOUNT.T_ACCOUNT;
+truncate table MEMBER.T_MERCHANT_USER_ROLE;
+truncate table ORDERS.T_PROXY_SETTLE;
+truncate table RISK.T_RC_CARD_BLACK;
+truncate table ORDERS.T_SUB_BUSINESS_ACTION;
+truncate table MEMBER.T_MERCHANT_ATTACHEDINFO;
+truncate table MEMBER.T_MERCHANT_USER;
+truncate table ORDERS.T_ORDER_ATTACHEDINFO;
+truncate table MEMBER.T_TRANSFER_STAT;
+truncate table MEMBER.T_PROXY_PAYCLASS_CONFIG;
+truncate table MEMBER.T_VERIFY_RECORD;
+truncate table SYSDB.T_SYS_NOTICE_VIEWER;
+truncate table ORDERS.T_PROXY_DAY_LIQUIDATION_SETTLE;
+truncate table ORDERS.T_PROXY_DAY_LIQUIDATION;
+truncate table ORDERS.T_ORDER_NOTIFY;
+truncate table ORDERS.T_ORDER_SETTLE;
+truncate table MEMBER.T_MEMBER_SETTLECONFIG;
+truncate table MEMBER.T_MERCHANT_KEYS;
+truncate table RISK.T_RC_PAYCLASS_RULE;
+truncate table SYSDB.T_SYS_NOTICE_PAYCLASS;
+truncate table SYSDB.T_CS_SERVICE_RECORD;
+truncate table MEMBER.T_LOGIN_AREA_STAT;
+truncate table MEMBER.T_MERCHANT_WEBSTATION_CONFIG;
+truncate table RISK.T_MERCHANT_WEEK_STAT;
+truncate table MEMBER.T_MERCHANT_BIZ_REQUEST;
+truncate table SYSDB.T_SYS_DEPT;
+truncate table MEMBER.T_PROXY_BIZ_REQUEST;
+truncate table RISK.T_RC_IP_BLACK;
+truncate table RISK.T_RC_PAYCLASS_CONFIG;
+truncate table ORDERS.T_CURRENT_ACTION;
+truncate table ORDERS.T_MAIN_BUSINESS_ACTIVITY;
+truncate table MEMBER.T_CURRENT_ACTION;
+truncate table MEMBER.T_TRANSFER;
+truncate table ORDERS.T_MERCHANT_DAY_LIQUIDATION;
+truncate table ORDERS.T_MERCHANT_SETTLE;
+truncate table ORDERS.T_ORDER;
+truncate table ORDERS.T_ORDER_SETTLE_INFO;
+truncate table ACCOUNT.T_ACCOUNT_LINE;
+truncate table ACCOUNT.T_ACCOUNT_PAYLINECACHE2;
+truncate table ACCOUNT.T_CURRENT_ACTION;  
+truncate table MEMBER.T_TRANSFER_BANK_ACCOUNT;
+--这一条清除数据sql，只是首次建库的时候执行
+truncate table SYSDB.T_BANK_GATEWAY;
+
+--按条件清理数据
+delete from sysdb.T_SYS_ROLE t where t.id<>'adminrole';
+delete from sysdb.T_SYS_ROLE_DATAACCESS t where t.role_id<>'adminrole';
+delete from sysdb.T_SYS_ROLE_MENU t where t.role_id<>'adminrole';
+delete from sysdb.T_SYS_ROLE_MENUITEM t where t.role_id<>'adminrole';
+delete from sysdb.T_SYS_USER;
+delete from sysdb.T_SYS_USER_ROLE;
+delete from t_short_message_channel t where t.name not like '%大汉三通%' and t.name not like  '%创世华信%';
+commit;
+
+--清空代办事项值，今日业务量值
+update sysdb.t_biz_stat t set t.sum_value = '0';
+commit;
+
+--计费系统
+truncate table ORDERS.T_Trade_day_Stat;
+commit;
+
+--同义词用到的表授权
+grant select on ACCOUNT.T_ACCOUNT to member;
+grant select on SYSDB.T_SECURITY_EVENT_TYPE to member;
+grant select on SYSDB.T_CHARGE_CONFIG to member;
+grant select on SYSDB.T_CLIENT_VERSION to member;
+grant select on SYSDB.T_PAY_CHANNEL to orders;
+
+--创建同义词
+create or replace SYNONYM MEMBER.T_ACCOUNT for ACCOUNT.T_ACCOUNT;
+create or replace synonym MEMBER.T_SECURITY_EVENT_TYPE for SYSDB.T_SECURITY_EVENT_TYPE;
+create or replace synonym MEMBER.T_CHARGE_CONFIG for SYSDB.T_CHARGE_CONFIG;
+create or replace synonym MEMBER.T_CLIENT_VERSION for SYSDB.T_CLIENT_VERSION;
+create or replace synonym ORDERS.T_PAY_CHANNEL for SYSDB.T_PAY_CHANNEL;
+--技术支持邮箱 不用改 
+update sysdb.t_sys_config t set t.config_vuale='ts-notice@zhiduntech.com' where t.id in('technicalSupportEmail'); 
+
+----------------------------下面的sql语句，根据不同支付平台的要求进行修改-----------------------------------------------------------
+-- 创建超级用户 加密串924b774c0180b9198718ae0ab3e75c5c = ddbill123
+INSERT INTO sysdb.t_sys_user(id,name,password,status,create_time,position,sex,email,mobile,modify_password_time,leader_flag) 
+VALUES('admin','超级管理员','924b774c0180b9198718ae0ab3e75c5c','1',sysdate,'1','M','718559605@qq.com','13723740815',sysdate,0);
+-- 创建超级用户角色
+INSERT INTO sysdb.t_sys_user_role (user_id, role_id) VALUES ('admin','adminrole');
+commit;
+
+-- 修改商家菜单名称
+--update member.T_MERCHANT_MENU t set t.name='财运快汇图标',t.name_en='caiyun988 logo' where t.name = '微鼎付图标';  
+-- 中文修改
+--update  sysdb.T_SHORT_MESSAGE_CHANNEL  t  set  t.channel_parameter=REPLACE(t.channel_parameter,'微鼎付','财运快汇');
+-- 英文修改
+--update  sysdb.T_SHORT_MESSAGE_CHANNEL  t  set  t.channel_parameter=REPLACE(t.channel_parameter,'zdrsz','caiyun988');
+
+
+--更新系统参数(修改转账通道账户余额不足通知邮箱及手机号)
+update sysdb.t_sys_config t set t.config_vuale='13035936569' where t.id in('financialDeptPhoneNumber','financialDeptPhoneNumber1');
+update sysdb.t_sys_config t set t.config_vuale='718559605@qq.com' where t.id in('financialDeptEmailAddress','financialDeptEmailAddress1','dealingDepartmentEmail','settlementDeptEmailAddress','systemEmailAddress');
+commit;
+
+
