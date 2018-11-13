@@ -1,0 +1,147 @@
+
+------------------------------------------------------以下为启动顺序----------------
+--原则：先开启内部，再启动外部，以最快有效恢复订单交易目标
+//下面的机器请信息部在各应用后补充集群IP与机器名，如（26.78-Vam01;26.79-Vam02）
+
+1、域名解析服务
+
+2、前置机器类：
+		支付返回接收前置机（需要信息部补充，具体IP与机器名）
+		银企直连前置机（需要信息部补充，具体IP与机器名）
+
+3、数据库类：（无依赖关系）
+		1.Oracle数据库
+		2.MongoDB日志数据库
+				（启动主节点：bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo2:27017
+				  启动从节点： bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo3:27017
+				  启动从节点：bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo2:27017,hobo3:27017）
+
+2、中间件类：（zookeeper先启，Metaq后启）
+		1.Memcached缓存系统
+				（/usr/local/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12000 -c 500 -P /tmp/memcached.pid
+				  /usr/local/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12001 -c 500 -P /tmp/memcached.pid）
+		2.zookeeper应用程序协调服务
+				（启动./bin/zkServer.sh start
+				  停止./bin/zkServer.sh stop）
+		3.Metaq消息中间件
+				（启动 ./bin/metaServer.sh start;
+				  停止 ./bin/metaServer.sh stop）
+ http://192.168.5.194/CreditCardDemo/testPayUTF-8.jsp
+ http://hellotest.dinpay.com/testPayUTF-8
+3、核心基础业务类：（CSPTransactionService最后启动）
+		1.CSPAccountService记账服务
+		2.CSPMerchantAuthService商家验签
+		3.CSPRiskControlService交易风控
+		4.CSPQueryInstructionService订单查询指令
+		5.CSPInstructionService指令服务
+		6.CSPTransferInstructionService对账查询指令
+		7.CSPTransactionService交易服务
+
+4、重要基础业务类：（无依赖关系）
+		1.CSPSettleService结算服务
+		2.QueryTransactionService商家订单查询服务
+
+4、核心定时服务类：（TSSSMSMessage短信通知必须确保启动）
+		1.TSSBizMsg消息拉取
+		2.TSSSMSMessage短信通知
+		3.HTTPProxyService通知转发服务
+		4.TSSHTTPMessage后台通知
+		5.TSSTimingTaskService定时任务
+
+5、核心网关类：（按业务约束依次启动） 177  IIPG  网关基础服务，要先启动  177和194 NGINX一定确保先KILL 不然会出现端口80被占用
+		1.CDNpay网关静态资源
+		2.IPPBankGateway内卡返回
+		3.IPPAccessGateway内卡接入
+		4.IPPCreditBankGateway外卡返回
+		5.IPPCreditCardGateway外卡接入
+		6.IPPMerTransferGatewy支企直连
+		7.IPPQueryGateway商家查询
+		8.Nginx代理访问网关应用 有专用的启动命令
+		177 tomcat
+		IIPG是自起服务
+		IIPP推送也是自起服务
+		如果网关起不来，检查TSSExceptionHandlingService异常处理，最后在网关之前启动
+		网关启动不了，还要检查TTSE,CSPT，TSSSMSM，时间一致性（后台，数据库，服务），代扣服务等l
+		
+
+6、重要定时服务类：（TSSOrderCheckTaskService最先启动）
+		1.TSSOrderCheckTaskService对账查询端
+		2.TSSOrderCheckTaskProducer对账生产端
+		3.TSSExceptionHandlingService异常处理  
+		4.TSSRiskControlTask定时风控
+		5.TSSEmailMessage邮件通知
+		6.TSSMerchantMessage站内通知
+         
+7、核心Web平台类：（CDN Nginx先启动）
+		1.CDNdinpay服务平台静态资源
+		2.Nginx图片服务器
+		3.dinpay智付官网
+		4.MSWeb总后台
+		5.AMSWeb代理商平台
+		6.MMSWeb商家平台
+
+8、智汇宝平台类：
+		1.令牌认证系统(包括DcSvr应用、ETMS应用)
+		2.TokenAuthService令牌服务
+		3.CFTService理财服务
+		4.CDNddibll服务平台静态资源
+		5.PMSWeb智汇宝平台
+		6.PMSMobileWeb智汇宝手机
+		7.CFTTaskService理财定时任务
+		8.download APK下载服务
+		9.Nginx代理访问智汇宝应用
+
+9、一般应用类：
+		1）报关业务类
+			1.CSPCustomsInstructionService海关报关服务
+			2.IPPCustomsGateway海关报关网关
+			3.TSSReportPaymentInfo海关报关定时任务
+		
+		2）实名认证业务类
+			1.IdentityService实名认证服务
+			2.IdentityGateway实名认证网关
+			
+		3）商家手机客户端业务类
+			1.Zookeeper商家手机-应用程序协调服务
+			2.Metaq商家手机-消息中间件
+			3.MMSMobileServices商家手机对内业务服务端
+			4.MMSMobileWeb商家手机对外业务接口端
+			5.MSTaskService商家手机推送定时任务
+			6.TSSPushMsg商家手机推送发送端
+		
+		4）商家收款通道APP业务类
+			1.MMSMRCService收款通道APK对内业务服务端
+			2.MMSMRCAction收款通道APK对外业务接口端
+			
+		5）托管业务类	
+			1.PFTPService托管对内业务服务端
+			2.PFTPWeb托管对外业务接口端
+			3.PFTPTaskService托管定时服务
+			
+		6）备付金业务类
+			1.ReserveService备付金服务
+			
+			
+
+--------以下为项目停机顺序------------------------------------
+原则：先停对外接口类，再等待内部定时任务处理，最后停止内部项目
+
+1、对外接口类：（按业务约束依次启动）
+		1.Nginx代理访问网关应用
+		2.CDNpay网关静态资源
+		3.IPPAccessGateway内卡接入		
+		4.IPPCreditCardGateway外卡接入
+		5.IPPMerTransferGatewy支企直连
+		6.Nginx代理访问智汇宝应用
+		7.download APK下载服务
+		8.PMSWeb智汇宝平台
+		9.MSWeb总后台
+		10.AMSWeb代理商平台
+		11.MMSWeb商家平台
+		12.MMSMobileWeb商家手机对外业务接口端
+		13.PFTPWeb托管对外业务接口端
+		14.MMSMRCAction收款通道APK对外业务接口端
+
+2、再等待内部定时任务处理，约等待10分钟
+
+3、按启动顺序的描述，进行完全相反（倒序）停机，如遇到步1已停止的机器，可以不操作或二次操作来确认。
