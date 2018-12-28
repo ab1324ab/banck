@@ -20,7 +20,8 @@
 2、中间件类：（zookeeper先启，Metaq后启）
 		1.Memcached缓存系统
 				（/usr/local/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12000 -c 500 -P /tmp/memcached.pid
-				  /usr/local/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12001 -c 500 -P /tmp/memcached.pid）
+				  /usr/local/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12001 -c 500 -P /tmp/memcached.pid
+				  测试环境:/usr/bin/memcached -d -m 500 -u root -l 192.168.xx.XXX -p 12000 -c 500 -P /tmp/memcached.pid）
 		2.zookeeper应用程序协调服务
 				（启动./bin/zkServer.sh start
 				  停止./bin/zkServer.sh stop）
