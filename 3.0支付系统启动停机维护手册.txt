@@ -15,7 +15,7 @@
 				（启动主节点：bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo2:27017
 				  启动从节点： bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo3:27017
 				  启动从节点：bin/mongod -port 27017 --fork -dbpath data -logpath log/log.log --replSet blort/hobo2:27017,hobo3:27017
-				  测试环境启动: ./bin/mongod --dbpath=data/）
+				  测试环境启动: ./bin/mongod --dbpath=data/ --logpath=log/log.log &）
 
 2、中间件类：（zookeeper先启，Metaq后启）
 		1.Memcached缓存系统
